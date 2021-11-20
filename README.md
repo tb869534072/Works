@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FRE-Training-102521
 
 This is a repo to record the FRE-TRAINING assignments and notes.
@@ -20,3 +21,6 @@ git branch by_your_name/notes
 git checkout by_your_name/notes
 implement the assignment under this feature branch.
 ``
+=======
+# Works
+>>>>>>> 45b9ae82b7f5f9a62cb4dbe990ced5e5a2ed2385
