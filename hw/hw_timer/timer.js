@@ -75,9 +75,6 @@ const Controller = ((view, model) => {
         
         const timer = () => {
             if (s.selectedIndex === 0 && m.selectedIndex === 0 && h.selectedIndex === 0) {
-                h.selectedIndex = 0;
-                m.selectedIndex = 0;
-                s.selectedIndex = 0;
                 pause();
             } else if (s.selectedIndex === 0 && m.selectedIndex === 0 && h.selectedIndex !== 0) {
                 h.selectedIndex--;
