@@ -26,8 +26,8 @@ export class CardsComponent implements OnInit {
     weight: 0,
     height: 0,
     types: [],
-    species: {name: ''},
-    sprites: {other: {dream_world: {front_default: ''}}}
+    species: { name: '' },
+    sprites: { other: { dream_world: { front_default: '' } } }
   };
 
   constructor(public pokemonservice: PokemonService, public dialog: MatDialog) { }
@@ -48,8 +48,8 @@ export class CardsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pokemons$ = forkJoin (
-      Object.values(starterPokemon).map(name => 
+    this.pokemons$ = forkJoin(
+      Object.values(starterPokemon).map(name =>
         this.pokemonservice.getPokemon(name)
       )
     )
