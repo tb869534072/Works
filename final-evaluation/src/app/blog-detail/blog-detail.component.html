@@ -1,0 +1,15 @@
+<div class="blog-details-container">
+    <div class="blog-details-image">
+        <img [src]="blog.featureImage" alt="cover_image">
+    </div>
+    <div class="blog-details-title-date">
+        <h3 id="title">{{blog.title}}</h3> 
+        <h4 id="date">{{blog.createdAt | date}}</h4>
+        <mat-chip-list class="chip-list">
+            <mat-chip *ngFor="let tag of blog.tags">{{ tag }}</mat-chip>
+        </mat-chip-list>
+    </div>
+    <div class="blog-details-content">
+        <p [textContent]="blog.content"></p>
+    </div>
+</div>

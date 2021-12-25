@@ -1,0 +1,18 @@
+<div class="homepage-wrapper">
+  <div class="homepage-container">
+    <mat-card class="blog-card" *ngFor="let blog of allBlogs | paginate: config">
+      <mat-card-header>
+        <mat-card-title [routerLink]="['/blog',blog.id]">{{blog.title}}</mat-card-title>
+        <mat-card-subtitle>{{blog.createdAt|date}}</mat-card-subtitle>
+        <mat-chip-list class="chip-list">
+          <mat-chip *ngFor="let tag of blog.tags">{{ tag }}</mat-chip>
+        </mat-chip-list>
+      </mat-card-header>
+      <img mat-card-image [routerLink]="['/blog',blog.id]" [src]="blog.featureImage" alt="Photo of a Blog">
+      <mat-card-content>
+        <p [innerHTML]="blog.content|slice:0:300"></p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<pagination-controls class='pagi' (pageChange)="pageChange($event)"></pagination-controls>

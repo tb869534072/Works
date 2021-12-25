@@ -1,0 +1,21 @@
+<div class="all-blogs-container">
+    <div class="blog-container" *ngFor="let blog of blogs | paginate: config">
+        <div class="blog-container-image">
+            <img [routerLink]="['/blog',blog.id]" [src]="blog.featureImage" alt="Cover-image">
+        </div>
+        <div class="blog-container-details">
+            <h3>{{blog.title}}</h3>
+        </div>
+        <div class="blog-container-actions">    
+            <button mat-raised-button id="edit-action" [routerLink]="['/user/update-blog', blog.id]" >Edit</button>
+            <button mat-raised-button id="delete-action" (click)="openDialog('Are you sure you want to delete this blog?', blog.id)">Delete</button>
+        </div>
+        
+        
+    </div>
+    <pagination-controls class='pagi' (pageChange)="pageChange($event)"></pagination-controls>
+</div>
+
+
+
+<mat-progress-spinner class="progress-spinner" mode="indeterminate" *ngIf="showSpinner"></mat-progress-spinner>

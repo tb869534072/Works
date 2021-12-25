@@ -1,0 +1,23 @@
+<form [formGroup]='loginForm'>
+    <div class="wrapper">
+        <div class="login-container">
+            <div class="login-form-container">
+                <h3>Admin Login</h3>
+                <mat-form-field>
+                    <input matInput placeholder="Email Address" formControlName='email'>
+                </mat-form-field>
+                <div class='alert' *ngIf='email && email.invalid && email.touched'>Email is not valid!</div>
+                <mat-form-field>
+                    <input matInput placeholder="Password" [type]="hide? 'password' : 'text'"
+                        formControlName='password'>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div class='alert' *ngIf='password && password.invalid && password.touched'>Password is not valid!</div>
+                <button mat-raised-button color="primary" (click)="submitForm()">Login</button>
+            </div>
+        </div>
+    </div>
+</form>

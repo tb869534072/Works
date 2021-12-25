@@ -1,0 +1,26 @@
+<div *ngIf='isLoaded'>
+    <table mat-table [dataSource]='dataSource'>
+
+        <ng-container matColumnDef='email'>
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef='let user'> {{ user.email }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef='password'>
+            <th mat-header-cell *matHeaderCellDef> Password </th>
+            <td mat-cell *matCellDef='let user'> {{ user.password }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef='action'>
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef='let user'>
+                <button mat-raised-button id="delete-action"
+                    (click)="openDialog('Are you sure you want to delete this user?', user.email)">Delete</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
